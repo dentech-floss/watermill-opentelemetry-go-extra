@@ -7,7 +7,7 @@ This is a complement to the official [watermill-opentelemetry](https://github.co
 ### Trace/Span propagation
 
 Provide support for propagating trace/span id metadata along with a published message which subscriber(s) can extract
-and create child spans from. That way the subscriber will be a child span of span created by the publisher.
+and create child spans from. That way the subscriber will be a child of the parent span created by the publisher.
 
 #### For publishers
 
