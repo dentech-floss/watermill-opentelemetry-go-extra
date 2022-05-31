@@ -1,15 +1,12 @@
 # watermill-opentelemetry-go-extra
 
-This is a complement to the official [watermill-opentelemetry](https://github.com/voi-oss/watermill-opentelemetry) repository.
+This is a complement to the official [watermill-opentelemetry](https://github.com/voi-oss/watermill-opentelemetry) library, where we provide support for propagating trace/span id metadata along with a published message which subscriber(s) then can extract and create child spans from. In other words, it enables us to trace asynchronous messaging flows in the system and thus increase the observability. Here is an example, where a child span was created by another service which is a subscriber of a published message:
+
+<img src="img/floss_distributed_tracing.png" width="512"/>
 
 ## Usage
 
-### Trace/Span propagation
-
-Provide support for propagating trace/span id metadata along with a published message which subscriber(s) can extract
-and create child spans from. That way the subscriber will be a child of the parent span created by the publisher.
-
-#### For publishers
+### For publishers
 
 ```go
 package example
@@ -51,7 +48,7 @@ func NewPublisher(logger *zap.Logger, config PublisherConfig) (message.Publisher
 }
 ```
 
-#### For subscribers
+### For subscribers
 
 A tracing middleware that extracts the propagated parent trace/span and creates a child span for the message can be defined at the router level, before the Watermill/Opentelemetry middleware:
 
