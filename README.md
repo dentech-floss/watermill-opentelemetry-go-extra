@@ -2,7 +2,7 @@
 
 This is a complement to the official [watermill-opentelemetry](https://github.com/voi-oss/watermill-opentelemetry) library, where we provide support for propagating trace/span id metadata along with a published message which subscriber(s) then can extract and create child spans from. In other words, it enables us to trace asynchronous messaging flows in the system and thus increase the observability. Here is an example, where a child span was created by another service which is a subscriber of a published message:
 
-<img src="img/floss_distributed_tracing.png" width="512"/>
+<img src="img/watermill-opentelemetry-go-extra.png" width="1024"/>
 
 ## Usage
 
