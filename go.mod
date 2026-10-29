@@ -3,7 +3,7 @@ module github.com/dentech-floss/watermill-opentelemetry-go-extra
 go 1.26
 
 require (
-	github.com/ThreeDotsLabs/watermill v1.5.1
+	github.com/ThreeDotsLabs/watermill v1.5.3
 	go.opentelemetry.io/otel/trace v1.40.0
 )
 
